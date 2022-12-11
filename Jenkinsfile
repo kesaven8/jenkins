@@ -1,15 +1,12 @@
 pipeline {
     agent any
     tools {
-        maven 'maven-3.8.6'
+        maven 'maven-3.8.5'
         jdk 'jdk17'
     }
 
     stages {
         stage('Build') {
-            environment {
-                JAVA_HOME="${tool 'jdk17'}"
-            }
             steps {
                 echo 'Building..'
                 sh 'printenv'
