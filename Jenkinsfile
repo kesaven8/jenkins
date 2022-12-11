@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                echo "JAVA_HOME: ${tool 'jdk17'}"
                 sh 'mvn clean package'
             }
         }
