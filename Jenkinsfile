@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-          image 'openjdk:17-jdk-alpine'
+          image 'maven:eclipse-temurin-17-alpine'
             args '-u root:root'
         }
     }
