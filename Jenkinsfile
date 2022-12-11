@@ -1,4 +1,3 @@
-env.JAVA_HOME="${tool 'jdk17'}"
 pipeline {
     agent any
     tools {
