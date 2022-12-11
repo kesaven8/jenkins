@@ -13,6 +13,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'printenv'
+                sh 'mvn --version -B'
                 echo "JAVA_HOME"
                 sh 'mvn clean package'
             }
