@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     tools {
@@ -8,28 +7,28 @@ pipeline {
     node {
         // set java home to the jdk tool
         JAVA_HOME = $ { tool 'jdk17' }
-        stages {
-            stage('Build') {
-                steps {
-                    echo 'Building..'
-                    echo "JAVA_HOME: ${tool 'jdk17'}"
-                    sh 'mvn clean package'
-                }
+
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                echo "JAVA_HOME: ${tool 'jdk17'}"
+                sh 'mvn clean package'
             }
-            stage('Test') {
-                steps {
-                    echo 'Testing..'
-                    sh 'mvn test'
-                }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+                sh 'mvn test'
             }
-            stage('Deploy') {
-                steps {
-                    echo 'Deploying..'
-                    sh 'mvn deploy'
-                }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying..'
+                sh 'mvn deploy'
             }
         }
     }
+
 
 }
 
