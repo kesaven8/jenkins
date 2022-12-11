@@ -6,7 +6,7 @@ pipeline {
         jdk 'jdk17'
     }
     environment {
-        env.JAVA_HOME = "${tool 'jdk17'}"
+        env.JAVA_HOME  "${tool 'jdk17'}"
     }
 
     stages {
