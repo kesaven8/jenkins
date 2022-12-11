@@ -1,10 +1,10 @@
 pipeline {
-    agent {
-        docker {
-          image 'maven:eclipse-temurin-17-alpine'
-            args '-u root:root'
-        }
+    agent
+    tools {
+        maven 'Maven 3.8.6'
+        jdk 'jdk17'
     }
+
     stages {
         stage('Build') {
             steps {
