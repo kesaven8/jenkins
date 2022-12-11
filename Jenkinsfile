@@ -8,9 +8,13 @@ pipeline {
 
     stages {
         stage('Build') {
+            environment {
+                JAVA_HOME="${tool 'jdk17'}"
+            }
             steps {
                 echo 'Building..'
-                echo "JAVA_HOME: ${tool 'jdk17'}"
+                sh 'printenv'
+                echo "JAVA_HOME"
                 sh 'mvn clean package'
             }
         }
