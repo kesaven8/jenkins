@@ -1,10 +1,12 @@
-set JAVA_HOME = ${tool 'jdk17'}
 
 pipeline {
     agent any
     tools {
         maven 'maven-3.8.6'
         jdk 'jdk17'
+    }
+    environment {
+        JAVA_HOME = tool 'jdk17'
     }
 
     stages {
