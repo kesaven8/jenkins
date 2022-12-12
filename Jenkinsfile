@@ -10,6 +10,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'printenv'
+                sh 'sudo apt-get install -y maven'
                 sh 'mvn --version'
             }
         }
