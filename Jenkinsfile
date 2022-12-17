@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'java -version'
                 sh 'printenv'
                 sh 'mvn --version'
             }
